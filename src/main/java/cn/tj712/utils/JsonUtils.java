@@ -22,7 +22,7 @@ public class JsonUtils {
      * @param dataFormat
      * @return
      */
-    public String getJson(Object object,String dataFormat){
+    public static String getJson(Object object,String dataFormat){
         ObjectMapper objectMapper = new ObjectMapper();
 
         objectMapper.configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS,false);
@@ -58,6 +58,10 @@ public class JsonUtils {
             e.printStackTrace();
         }
        return 0;
+    }
+
+    public static String getJson(Object object){
+        return getJson(object,"yyyy-MM-dd HH:mm:ss");
     }
 
 }
